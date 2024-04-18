@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Template</title>
+    <style>
+      body {
+        margin: 0;
+        font-size: 13px;
+        font-weight: 400;
+        font-family: Poppins, Helvetica, 'sans-serif';
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        height: 100vh;
+      }
+      .setting {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        max-width: 600px;
+        background-color: #ffffff;
+        box-shadow: 0px 0px 40px rgba(177, 187, 208, 0.15);
+      }
+      .login {
+        background-color: #f3f5f9;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 2.5rem;
+      }
+
+      .account-setting {
+        display: flex;
+        flex: none;
+        padding-left: 7.5rem;
+        padding-right: 7.5rem;
+        padding-top: 3.75rem;
+      }
+      .login-logo {
+        padding-bottom: 1.5rem;
+        padding-top: 1.5rem;
+      }
+      a {
+        outline: 0;
+        color: #3699ff;
+        text-decoration: none;
+        background-color: transparent;
+      }
+      .account-setting-stepgroup {
+        padding: 0;
+        padding-top: 7.5rem;
+      }
+      .account-setting-step {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .step {
+        display: flex;
+        padding: 0.75rem;
+        margin-bottom: 1.5rem;
+      }
+      .circle-icon-1 {
+        display: flex;
+        background-color: #c9f7f5;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        margin-right: 1.4rem;
+      }
+      .circle-icon-1-number {
+        color: #1bc5bd;
+        font-weight: 600;
+        font-size: 1.35rem;
+      }
+      .circle-icon {
+        display: flex;
+        background-color: #f3f6f9;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        margin-right: 1.4rem;
+      }
+      .circle-icon-number {
+        color: #3f4254;
+        font-weight: 600;
+        font-size: 1.35rem;
+      }
+
+      .step-label {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      h3 {
+        color: #181c32;
+        font-weight: 500;
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+        margin-top: 0;
+        padding-top: 0;
+        text-align: left;
+        display: block;
+      }
+      .step-desc {
+        color: #b5b5c3;
+        font-size: 1.08rem;
+        font-weight: 500;
+        text-align: left;
+      }
+      .image-girl {
+        background-image: url(https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/svg/illustrations/features.svg);
+        min-height: 320px;
+        background-size: 400px;
+        background-position-x: center;
+        background-position-y: calc(100% + 3rem);
+        background-repeat: no-repeat;
+        flex: 1;
+        min-width: 0;
+        padding-top: 1.25rem;
+        height: 50vh;
+      }
+      .before-header {
+        text-align: right;
+        display: flex;
+        justify-content: center;
+      }
+      .header {
+        text-align: right;
+        display: flex;
+        justify-content: flex-end;
+        max-width: 650px;
+        width: 100%;
+        padding-bottom: 0;
+        padding-top: 1.25rem;
+      }
+      .issue {
+        font-size: 1.35rem;
+        color: #b5b5c3;
+        font-weight: 500;
+        text-align: right;
+      }
+      .get-help {
+        font-size: 1.35rem;
+        color: #3699ff;
+        font-weight: 600;
+        margin-left: 0.5rem;
+      }
+      .login-body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        min-width: 0;
+      }
+      .login-form {
+        max-width: 650px;
+        width: 100%;
+      }
+      form {
+        margin-top: 0rem;
+      }
+      .overall-form {
+        padding-bottom: 1.25rem;
+      }
+      .form-title {
+        padding-bottom: 3.75rem;
+      }
+      .form-acc {
+        font-size: 2.25rem;
+        color: #181c32;
+        font-weight: 600;
+      }
+      .alr-acc {
+        font-size: 1.35rem;
+        color: #b5b5c3;
+        font-weight: 500;
+      }
+      .form-group {
+        margin-bottom: 1.75rem;
+      }
+      label {
+        display: inline-block;
+        margin-bottom: 600;
+      }
+      .form-label {
+        font-size: 1.175rem;
+        color: #181c32;
+        font-weight: 600;
+      }
+      input {
+        margin: 0;
+        font-family: inherit;
+      }
+      .form-input {
+        font-size: 1.175rem;
+        height: auto;
+        padding-bottom: 1.75rem;
+        padding-top: 1.75rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        border-radius: 0.85rem;
+        border: 0;
+        display: block;
+        width: 100%;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #3f4254;
+        background-color: #ffffff;
+        background-clip: padding-box;
+        box-shadow: none;
+        overflow: visible;
+      }
+      .form-bottom {
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 0.75rem;
+      }
+      .next-button {
+        cursor: pointer;
+        color: #ffffff;
+        background-color: #3699ff;
+        border-color: #3699ff;
+        outline: none;
+        vertical-align: middle;
+        font-size: 1.175rem;
+        font-weight: 600;
+        padding-right: 2rem;
+        padding-left: 1.25rem;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+        margin-bottom: 0.75rem;
+        margin-top: 0.75rem;
+        text-align: center;
+        border-radius: 0.42rem;
+        box-shadow: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="setting">
+        <div class="account-setting">
+          <div>
+            <a href="" class="login-logo"
+              ><img
+                src="https://preview.keenthemes.com/metronic/theme/html/demo1/dist/assets/media/logos/logo-1.png"
+            /></a>
+            <div class="account-setting-stepgroup">
+              <div class="account-setting-step">
+                <div class="step">
+                  <div class="circle-icon-1">
+                    <div class="circle-icon-1-number">1</div>
+                  </div>
+                  <div class="step-label">
+                    <h3>Account Settings</h3>
+                    <div class="step-desc">Setup Your Account Details</div>
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="circle-icon">
+                    <div class="circle-icon-number">2</div>
+                  </div>
+                  <div class="step-label">
+                    <h3>Address Details</h3>
+                    <div class="step-desc">Setup Residence Address</div>
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="circle-icon">
+                    <div class="circle-icon-number">2</div>
+                  </div>
+                  <div class="step-label">
+                    <h3>Make Payment</h3>
+                    <div class="step-desc">Use Credit or Debit Cards</div>
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="circle-icon">
+                    <div class="circle-icon-number">2</div>
+                  </div>
+                  <div class="step-label">
+                    <h3>Completed!</h3>
+                    <div class="step-desc">Review and Submit</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="image-girl"></div>
+      </div>
+      <div class="login">
+        <div class="before-header">
+          <div class="header">
+            <div class="issue">Having issues?</div>
+            <a href="" class="get-help">Get Help</a>
+          </div>
+        </div>
+        <div class="login-body">
+          <div class="login-form">
+            <form>
+              <div class="overall-form">
+                <!--title-->
+                <div class="form-title">
+                  <h3 class="form-acc">Create Account</h3>
+                  <div class="alr-acc">
+                    Alredy have an account ? <a href="">Sign In</a>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">First Name</label>
+                  <input
+                    type="text"
+                    class="form-input"
+                    placeholder="First Name"
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Last Name</label>
+                  <input
+                    type="text"
+                    class="form-input"
+                    placeholder="Last Name"
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Phone</label>
+                  <input
+                    type="tel"
+                    class="form-input"
+                    placeholder="+61412345678"
+                  />
+                </div>
+              </div>
+              <div class="form-bottom">
+                <div>
+                  <button type="button" class="next-button">Next Step</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

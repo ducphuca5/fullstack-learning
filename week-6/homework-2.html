@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Template</title>
+  </head>
+  <body>
+    <script>
+      //function formula: 'function' name(argument,...){return ...}
+      function introduceMyself(name, age) {
+        return `I am ${name}! I am ${age} years old`;
+      }
+
+      let name = 'Peter';
+      let age = '33';
+      console.log(introduceMyself(name, age));
+
+      //create a variable inside function to get the length property you want.
+      //the property is after a dot sign after the argument.
+      function getSentenceLength(sentence) {
+        let sentenceLength = sentence.length;
+        return `${sentence} has ${sentenceLength} characters!`;
+      }
+      let sentence = 'Hello, World!';
+      console.log(getSentenceLength(sentence));
+
+      //basic function of sum and subtraction etc, keep it simple, use + - etc sign
+      function add(x, y) {
+        return x + y;
+      }
+      console.log(add(8, 3));
+      function minus(x, y) {
+        return x - y;
+      }
+      console.log(minus(10, 5));
+      function multiply(x, y) {
+        return x * y;
+      }
+      console.log(multiply(10, 20));
+      // add the previous function to return line
+      function getAverage(x, y) {
+        return add(x, y) / 2;
+      }
+      console.log(getAverage(5, 10));
+
+      // create a if function, use argument to compare with 50
+      function checkExamResult(score) {
+        if (score >= 50) {
+          return `pass`;
+        } else {
+          return `fail`;
+        }
+      }
+      console.log(checkExamResult(50));
+      // create multiple if and else if function
+      function getGrade(score) {
+        if (score >= 90) {
+          return `A`;
+        } else if (score >= 80) {
+          return `B`;
+        } else if (score >= 70) {
+          return `C`;
+        } else if (score >= 60) {
+          return `D`;
+        } else if (score >= 50) {
+          return `E`;
+        } else {
+          return `F`;
+        }
+      }
+      console.log(getGrade(75));
+      // loop function
+      function printNumbers(score) {
+        for (let i = 1; i <= score; i++) {
+          console.log(i);
+        }
+      }
+      console.log(printNumbers(3));
+      //loop function using length property
+      function printNames(names) {
+        for (let i = 0; i < names.length; i++) {
+          console.log(names[i]);
+        }
+      }
+      console.log(printNames(['Henry', 'Naomi', 'Sarah']));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Template</title>
+    <style>
+      h1 {
+        font-size: 40;
+        color: green;
+      }
+      div {
+        margin-bottom: 20px;
+      }
+      span {
+        font-weight: bold;
+      }
+      .t2 {
+        color: red;
+      }
+      .t3 {
+        color: forestgreen;
+      }
+      .t4 {
+        color: orange;
+      }
+      .t5 {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>This is Week 2 - Homework 1</h1>
+    <div class="t1"><span>1st</span> text block!</div>
+    <div class="t2"><span>2nd</span> text block!</div>
+    <div class="t3"><span>3rd</span> text block!</div>
+    <div class="t4"><span>4th</span> text block!</div>
+    <div class="t5"><span>5th</span> text block!</div>
+    <script>
+      document.querySelector('.t2').addEventListener('click', function () {
+        alert('Red text is clicked');
+      });
+
+      document.querySelector('.t3').addEventListener('click', function () {
+        alert('Green text is clicked');
+      });
+
+      document.querySelector('.t4').addEventListener('click', function () {
+        alert('Orange text is clicked');
+      });
+
+      document.querySelector('.t5').addEventListener('click', function () {
+        alert('Blue text is clicked');
+      });
+    </script>
+  </body>
+</html>

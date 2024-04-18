@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Template</title>
+    <style>
+      body {
+        background: #eef0f8;
+        display: flex;
+        flex-direction: column;
+        color: #3f4254;
+        height: 100vh;
+        margin: 0px;
+        padding: 0px;
+        font-size: 13px;
+        font-weight: 400;
+        font-family: Poppins, Helvetica, 'sans-serif';
+        line-height: 1.5;
+        text-align: left;
+      }
+      .page {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .page-wrapper {
+        display: flex;
+        flex-direction: row;
+        flex: 1 0 auto;
+      }
+
+      .info {
+        flex: 1 auto;
+        display: flex;
+        flex-direction: column;
+        padding-left: 70px;
+        padding-top: 119px;
+
+        min-width: 0;
+      }
+
+      .header {
+        box-shadow: none;
+        left: 70px;
+        height: 65px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 97;
+        background-color: #ffffff;
+        display: flex;
+        justify-content: space-between;
+      }
+      .content {
+        flex: 1 0 auto;
+        display: flex;
+        flex-direction: column;
+        padding: 25px;
+      }
+      /* start subhead*/
+      .subheader {
+        left: 70px;
+        display: flex;
+        align-items: center;
+        height: 35px;
+        top: 65px;
+        right: 0;
+        transition: top 0.3s ease;
+        box-shadow: 0px 10px 30px 0px rgba(82, 63, 105, 0.08);
+        background-color: #ffffff;
+        border-top: 1px solid #ebedf3;
+        margin: 0;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        position: fixed;
+        z-index: 95;
+      }
+      .subheader-content {
+        padding: 0 25px;
+        display: flex;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      .subhead-content-left {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-right: 0.25rem;
+      }
+      .subhead-content-left-wrap {
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+        margin-right: 1.25rem;
+      }
+
+      .subhead-content-text {
+        display: block;
+        color: #181c32;
+        font-weight: 500;
+        margin-right: 1.25rem;
+        margin-bottom: 0.25rem;
+        margin-top: 0.25rem;
+        font-size: 1.25rem;
+        line-height: 1.2;
+      }
+
+      h5 {
+        display: block;
+        margin-block-start: 1.67em;
+        margin-block-end: 1.67em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        unicode-bidi: isolate;
+      }
+
+      .wizard-list {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        background-color: transparent;
+        border-radius: 0;
+        font-size: 0.925rem;
+        font-weight: 500;
+        padding: 0;
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+        list-style: none;
+      }
+
+      ul {
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 40px;
+        unicode-bidi: isolate;
+      }
+
+      .list-content {
+        display: flex;
+        color: #b5b5c3;
+        box-sizing: border-box;
+      }
+
+      li {
+        unicode-bidi: isolate;
+      }
+
+      .list-text-1 {
+        display: flex;
+        align-items: center;
+        color: #b5b5c3;
+      }
+
+      .list-text-2 {
+        display: flex;
+        align-items: center;
+        color: #b5b5c3;
+        padding-left: 0.5rem;
+      }
+
+      a {
+        outline: 0;
+        transition: color 0.15s ease, background-color 0.15s ease,
+          border-color 0.15s ease, box-shadow 0.15s ease,
+          -webkit-box-shadow 0.15s ease;
+        text-decoration: none;
+        background-color: transparent;
+        cursor: pointer;
+      }
+
+      .subhead-content-right {
+        display: flex;
+        align-items: center;
+      }
+
+      .subhead-logo {
+        cursor: pointer;
+        color: #3699ff;
+        background-color: #e1f0ff;
+        border-color: transparent;
+        outline: none;
+        vertical-align: middle;
+        font-weight: 600;
+        padding: 0.55rem 0.75rem;
+        font-size: 0.925rem;
+        line-height: 1.35;
+        border-radius: 0.42rem;
+        display: inline-block;
+        text-align: center;
+        user-select: none;
+        border: 1px solid transparent;
+      }
+
+      .subhead-logo:hover {
+        text-decoration: none;
+        color: #ffffff;
+        background-color: #3699ff;
+        border-color: transparent;
+      }
+
+      .subhead-logo:active {
+        color: #ffffff;
+        background-color: #3699ff;
+        border-color: transparent;
+        box-shadow: none;
+        text-decoration: none;
+      }
+
+      .subhead-logo-plus {
+        display: inline-block;
+        position: relative;
+        box-sizing: border-box;
+        unicode-bidi: isolate;
+      }
+
+      .subhead-logo-plus-icon {
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        height: calc(1.5em + 1.3rem + 2px);
+        width: calc(1.5em + 1.3rem + 2px);
+        outline: none;
+        vertical-align: middle;
+        font-weight: normal;
+        color: #3f4254;
+        text-align: center;
+        user-select: none;
+        background-color: transparent;
+        border: 1px solid transparent;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: 0.42rem;
+      }
+
+      /* end subhead*/
+
+      /* start content entry*/
+      .entry {
+        flex: 1 0 auto;
+        display: flex;
+      }
+      .entry-container {
+        padding: 0 25px;
+        max-width: 1340px;
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      .card {
+        background-color: transparent;
+        box-shadow: 0px 0px 30px 0px rgba(82, 63, 105, 0.05);
+        border: 0;
+        position: relative;
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-clip: border-box;
+        border-radius: 0.42rem;
+        box-sizing: border-box;
+      }
+      .card-body {
+        padding: 0;
+        flex: 1 1 auto;
+        min-height: 1px;
+        box-sizing: border-box;
+      }
+      .wizard {
+        box-sizing: border-box;
+      }
+      .wizard-nav {
+        box-sizing: border-box;
+      }
+      .wizard-steps {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+      }
+      .wizard-step {
+        background-color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex: 0 0 calc(25% - 0.25rem);
+        width: calc(25% - 0.25rem);
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+        cursor: pointer;
+      }
+      .wizard-wrapper {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        color: #3f4254;
+        padding: 2rem 2.5rem;
+      }
+      .wizard-number {
+        color: #ffffff;
+        background-color: #3699ff;
+        font-size: 1.3rem;
+        font-weight: 600;
+        flex: 0 0 2.75rem;
+        height: 2.75rem;
+        width: 2.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
+        border-radius: 0.5rem;
+        box-sizing: border-box;
+      }
+      .wizard-label {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+      }
+      .wizard-title {
+        color: #3699ff;
+        font-size: 1.1rem;
+        font-weight: 600;
+        box-sizing: border-box;
+      }
+      .wizard-desc {
+        box-sizing: border-box;
+      }
+      .wizard-step-pending {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex: 0 0 calc(25% - 0.25rem);
+        width: calc(25% - 0.25rem);
+        background-color: #f3f6f9;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+        cursor: pointer;
+        box-sizing: border-box;
+      }
+      .card-custom {
+        box-shadow: none;
+        border: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #ffffff;
+        background-clip: border-box;
+        border-radius: 0.42rem;
+      }
+      .card-body-wrapper {
+        padding-bottom: 3.75rem;
+        padding-top: 3.75rem;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-right: -12.5px;
+        margin-left: -12.5px;
+        box-sizing: border-box;
+      }
+      .wizard-form-wrapper {
+        flex: 0 0 58.3333333333%;
+        max-width: 58.3333333333%;
+        position: relative;
+        width: 100%;
+        padding-right: 12.5px;
+        padding-left: 12.5px;
+        box-sizing: border-box;
+      }
+      form {
+        display: block;
+        unicode-bidi: isolate;
+      }
+      .wizard-form {
+        margin-top: 2.5rem;
+        box-sizing: border-box;
+      }
+      .current-form {
+        display: block;
+        padding-bottom: 1.25rem;
+      }
+      .form-title {
+        color: #181c32;
+        font-weight: 500;
+        margin-bottom: 2.5rem;
+      }
+      .form-group {
+        margin-bottom: 1.75rem;
+        position: relative;
+        box-sizing: border-box;
+      }
+      label {
+        display: inline-block;
+        margin-bottom: 0.5rem;
+        box-sizing: border-box;
+        cursor: default;
+      }
+      .form-control {
+        background-color: #f3f6f9;
+        border-color: #f3f6f9;
+        color: #3f4254;
+        height: calc(1.5em + 1.65rem + 2px);
+        padding: 0.825rem 1.42rem;
+        font-size: 1.08rem;
+        line-height: 1.5;
+        border-radius: 0.42rem;
+        display: block;
+        width: 100%;
+        font-weight: 400;
+        background-clip: padding-box;
+        border: 1px solid #e4e6ef;
+        box-shadow: none;
+      }
+      input {
+        overflow: visible;
+        margin: 0;
+        font-family: inherit;
+        box-sizing: border-box;
+        text-rendering: auto;
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        text-align: start;
+        appearance: auto;
+        -webkit-rtl-ordering: logical;
+        cursor: text;
+      }
+      .form-note {
+        font-size: 0.9rem;
+        font-weight: 400;
+        color: #b5b5c3;
+        display: block;
+        margin-top: 0.25rem;
+        box-sizing: border-box;
+      }
+      .form-row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -12.5px;
+        margin-left: -12.5px;
+      }
+      .form-col {
+        flex: 0 0 50%;
+        max-width: 50%;
+        position: relative;
+        width: 100%;
+        padding-right: 12.5px;
+        padding-left: 12.5px;
+        box-sizing: border-box;
+      }
+      .wizard-action {
+        padding-top: 2.5rem;
+        margin-top: 1.25rem;
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid #ebedf3;
+        box-sizing: border-box;
+      }
+      .next-button {
+        position: relative;
+        left: 38rem;
+        display: inline-block;
+        cursor: pointer;
+        color: #ffffff;
+        background-color: #3699ff;
+        border-color: #3699ff;
+        outline: none;
+        vertical-align: middle;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding-left: 2.25rem;
+        padding-right: 2.25rem;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+        box-shadow: none;
+        text-align: center;
+        user-select: none;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: 0.42rem;
+      }
+      button {
+        overflow: visible;
+        margin: 0;
+        font-family: inherit;
+        text-rendering: auto;
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-indent: 0px;
+        text-shadow: none;
+        padding-block: 1px;
+        padding-inline: 6px;
+      }
+      .wizard-button {
+        display: flex;
+      }
+      .footer {
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        background-color: #ffffff;
+        box-sizing: border-box;
+      }
+      .footer-wrapper {
+        padding: 0 25px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      .footer-right {
+        color: #181c32;
+        order: 1;
+        box-sizing: border-box;
+        padding-right: 5rem;
+      }
+      .footer-right-text-bold {
+        color: #b5b5c3;
+        font-weight: 500;
+        margin-right: 0.5rem;
+        box-sizing: border-box;
+      }
+      .footer-right-text {
+        color: #3f4254;
+      }
+      .footer-left {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 0;
+        padding-bottom: 0;
+        list-style: none;
+      }
+      .footer-left-text {
+        display: flex;
+        align-items: center;
+        transition: color 0.15s ease, background-color 0.15s ease,
+          border-color 0.15s ease, box-shadow 0.15s ease,
+          -webkit-box-shadow 0.15s ease;
+        padding: 0.75rem 1.5rem;
+        color: #7e8299;
+        padding-right: 1.25rem;
+        padding-left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="page-wrapper">
+        <div class="info">
+          <!-- start header -->
+          <div class="header">header</div>
+          <div class="content">
+            <!-- start sub head-->
+            <div class="subheader">
+              <div class="subheader-content">
+                <div class="subhead-content-left">
+                  <div class="subhead-content-left-wrap">
+                    <h5 class="subhead-content-text">Wizard 4</h5>
+                    <ul class="wizard-list">
+                      <li class="list-content">
+                        <a href="" class="list-text-1">Pages</a>
+                      </li>
+                      <li class="list-content">
+                        <a class="list-text-2"> . </a>
+                      </li>
+                      <li class="list-content">
+                        <a href="" class="list-text-2">Wizard 4</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="subhead-content-right">
+                  <a href="" class="subhead-logo">Actions</a>
+                  <div class="subhead-logo-plus">
+                    <a href="#" class="subhead-logo-plus-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        width="24px"
+                        height="24px"
+                        viewBox="0 0 24 24"
+                        version="1.1"
+                      >
+                        <title>Stockholm-icons / Files / File-plus</title>
+                        <desc>Created with Sketch.</desc>
+                        <defs></defs>
+                        <g
+                          stroke="none"
+                          stroke-width="1"
+                          fill="none"
+                          fill-rule="evenodd"
+                        >
+                          <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                          <path
+                            d="M5.85714286,2 L13.7364114,2 C14.0910962,2 14.4343066,2.12568431 14.7051108,2.35473959 L19.4686994,6.3839416 C19.8056532,6.66894833 20,7.08787823 20,7.52920201 L20,20.0833333 C20,21.8738751 19.9795521,22 18.1428571,22 L5.85714286,22 C4.02044787,22 4,21.8738751 4,20.0833333 L4,3.91666667 C4,2.12612489 4.02044787,2 5.85714286,2 Z"
+                            fill="#000000"
+                            fill-rule="nonzero"
+                            opacity="0.3"
+                          ></path>
+                          <path
+                            d="M11,14 L9,14 C8.44771525,14 8,13.5522847 8,13 C8,12.4477153 8.44771525,12 9,12 L11,12 L11,10 C11,9.44771525 11.4477153,9 12,9 C12.5522847,9 13,9.44771525 13,10 L13,12 L15,12 C15.5522847,12 16,12.4477153 16,13 C16,13.5522847 15.5522847,14 15,14 L13,14 L13,16 C13,16.5522847 12.5522847,17 12,17 C11.4477153,17 11,16.5522847 11,16 L11,14 Z"
+                            fill="#000000"
+                          ></path>
+                        </g>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end sub head-->
+            <!-- begin entry -->
+            <div class="entry">
+              <div class="entry-container">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="wizard">
+                      <div class="wizard-nav">
+                        <div class="wizard-steps">
+                          <div class="wizard-step">
+                            <div class="wizard-wrapper">
+                              <div class="wizard-number">1</div>
+                              <div class="wizard-label">
+                                <div class="wizard-title">Add Account</div>
+                                <div class="wizard-desc">
+                                  Create Custom Account
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="wizard-step-pending">
+                            <div class="wizard-wrapper">
+                              <div class="wizard-number">2</div>
+                              <div class="wizard-label">
+                                <div class="wizard-title">Your Address</div>
+                                <div class="wizard-desc">
+                                  Setup Your Address
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="wizard-step-pending">
+                            <div class="wizard-wrapper">
+                              <div class="wizard-number">3</div>
+                              <div class="wizard-label">
+                                <div class="wizard-title">Make Payment</div>
+                                <div class="wizard-desc">
+                                  Add Payment Options
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="wizard-step-pending">
+                            <div class="wizard-wrapper">
+                              <div class="wizard-number">4</div>
+                              <div class="wizard-label">
+                                <div class="wizard-title">Completed</div>
+                                <div class="wizard-desc">Review and Submit</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-custom">
+                        <div class="card-body">
+                          <div class="card-body-wrapper">
+                            <div class="wizard-form-wrapper">
+                              <form class="wizard-form">
+                                <div class="current-form">
+                                  <div class="form-title">
+                                    Enter your Account Details
+                                  </div>
+                                  <div class="form-group">
+                                    <label>First Name</label>
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      name="fname"
+                                      placeholder="First Name"
+                                      value="Peter"
+                                    />
+                                    <span class="form-note"
+                                      >Please enter your first name.</span
+                                    >
+                                  </div>
+                                  <div class="form-group">
+                                    <label>Last Name</label>
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      name="lname"
+                                      placeholder="First Name"
+                                      value="Tran"
+                                    />
+                                    <span class="form-note"
+                                      >Please enter your last name.</span
+                                    >
+                                  </div>
+                                  <div class="form-row">
+                                    <div class="form-col">
+                                      <div class="form-group">
+                                        <label>Phone</label>
+                                        <input
+                                          type="tel"
+                                          class="form-control"
+                                          name="phone"
+                                          placeholder="phone"
+                                          value="+61412345678"
+                                        />
+                                        <span class="form-note"
+                                          >Please enter your phone number.</span
+                                        >
+                                      </div>
+                                    </div>
+                                    <div class="form-col">
+                                      <div class="form-group">
+                                        <label>Email</label>
+                                        <input
+                                          type="email"
+                                          class="form-control"
+                                          name="email"
+                                          placeholder="Email"
+                                          value="p.tran@yahoo.com"
+                                        />
+                                        <span class="form-note"
+                                          >Please enter your email
+                                          address.</span
+                                        >
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </form>
+                              <div class="wizard-action">
+                                <div class="wizard-button">
+                                  <button type="button" class="next-button">
+                                    Next
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer">
+            <div class="footer-wrapper">
+              <div class="footer-right">
+                <span class="footer-right-text-bold">2024©</span>
+                <a
+                  href="http://keenthemes.com/metronic"
+                  class="footer-right-text"
+                  >Keenthemes</a
+                >
+              </div>
+              <div class="footer-left">
+                <a
+                  href="http://keenthemes.com/metronic"
+                  class="footer-left-text"
+                  >About</a
+                >
+                <a
+                  href="http://keenthemes.com/metronic"
+                  class="footer-left-text"
+                  >Team</a
+                >
+                <a
+                  href="http://keenthemes.com/metronic"
+                  class="footer-left-text"
+                  >Contact</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
