@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Counter</title>
+  </head>
+  <body>
+    <button class="minus">- 1</button>
+    <input type="number" class="display" />
+    <button class="plus">+ 1</button>
+  </body>
+  <script>
+    //select 3 elements
+    let btnminus = document.querySelector('.minus');
+    let btnplus = document.querySelector('.plus');
+    let display = document.querySelector('.display');
+
+    //click minus button, add 1 more value to display box
+    //add event click
+    btnminus.addeventlistener('click', function () {
+      //get current input value
+      let currentInputValue = input.value;
+      // create a new variable: a number which is the input value -1
+      let newValue = currentInputValue - 1;
+      // set the new number back into input value
+      input.value = newValue;
+    });
+
+    //click plus button, subtract 1 value in display box
+    btnplus.addeventlistener('click', function () {
+      //get current input value
+      let currentInputValue = input.value;
+      // create a new variable: a number which is the input value -1
+      let newValue = currentInputValue + 1;
+      // set the new number back into input value
+      input.value = newValue;
+    });
+  </script>
+</html>
